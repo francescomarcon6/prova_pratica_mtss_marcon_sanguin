@@ -9,19 +9,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class RomanPrinterTest {
+public class IntegerToRomanTest {
 
     @ParameterizedTest
     @CsvSource({
-            "1, ' _____ \n|_   _|\n  | |  \n  | |  \n _| |_ \n|_____|'",
-            "2, ' _____  _____ \n|_   _||_   _|\n  | |    | |  \n  | |    | |  \n _| |_  _| |_ \n|_____||_____|'",
-            "3, ' _____  _____  _____ \n|_   _||_   _||_   _|\n  | |    | |    | |  \n  | |    | |    | |  \n _| |_  _| |_  _| |_ \n|_____||_____||_____|'"
+            "1, I",
+            "2, II",
+            "3, III"
     })
-    public void print_ValidInteger_ReturnsAsciiArt(int input, String expectedOutput) {
+    public void convert_ValidInteger_ReturnsRomanString(int input, String expectedOutput) {
         // Arrange (I dati sono preparati dal @CsvSource)
 
         // Act
-        String actualOutput = RomanPrinter.print(input);
+        String actualOutput = IntegerToRoman.convert(input);
 
         // Assert
         assertEquals(expectedOutput, actualOutput);
