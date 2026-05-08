@@ -32,11 +32,17 @@ public class IntegerToRomanTest {
             "70, LXX",
             "80, LXXX",
             "90, XC",
-            "100, C"
+            "100, C",
+            "200, CC",
+            "300, CCC",
+            "399, CCCXCIX",
+            "400, CD",
+            "444, CDXLIV",
+            "500, D"
     })
     public void convert_ValidInteger_ReturnsRomanString(int input, String expectedOutput) {
-        // Arrange (I dati sono preparati dal @CsvSource)
-
+        // Arrange
+        
         // Act
         String actualOutput = IntegerToRoman.convert(input);
 
@@ -44,4 +50,3 @@ public class IntegerToRomanTest {
         assertEquals(expectedOutput, actualOutput);
     }
 }
-
