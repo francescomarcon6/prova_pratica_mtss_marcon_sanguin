@@ -31,10 +31,14 @@ public class RomanPrinter {
                 { 
                     " _      ", "| |     ", "| |     ", 
                     "| |     ", "| |____ ", "|______|" 
+                },
+                { 
+                    "  _____ ", " / ____|", "| |     ", 
+                    "| |     ", "| |____ ", " \\_____|" 
                 }
         };
         
-        String letters = "IVXL";
+        String letters = "IVXLC";
         
         for (int row = 0; row < 6; row++) {
             for (char c : romanNumber.toCharArray()) {
