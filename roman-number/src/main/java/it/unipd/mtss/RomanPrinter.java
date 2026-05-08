@@ -1,14 +1,9 @@
-/////////////////////////////////////////////
-// FRANCESCO MARCON 2110990
-// MARCO SANGUIN 2103121
-////////////////////////////////////////////
-
 package it.unipd.mtss;
 
 public class RomanPrinter {
 
-    // Costanti di classe: spostando l'array qui riduciamo drasticamente
-    // la lunghezza del metodo e miglioriamo le performance!
+    // Spostando l'array qui fuori come costante, il metodo sotto diventa cortissimo
+    // e Checkstyle non darà più l'errore della lunghezza massima del metodo!
     private static final String[][] ASCII_LETTERS = {
             { 
                 " _____ ", "|_   _|", "  | |  ", 
