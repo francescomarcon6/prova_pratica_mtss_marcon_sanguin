@@ -21,7 +21,11 @@ public class IntegerToRomanTest {
             "6, VI",
             "7, VII",
             "9, IX",
-            "10, X"
+            "10, X",
+            "15, XV",
+            "19, XIX",
+            "20, XX",
+            "30, XXX"
     })
     public void convert_ValidInteger_ReturnsRomanString(int input, String expectedOutput) {
         // Arrange (I dati sono preparati dal @CsvSource)
