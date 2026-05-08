@@ -14,7 +14,7 @@ public class RomanPrinter {
     private static String printAsciiArt(String romanNumber) {
         StringBuilder asciiArt = new StringBuilder();
         
-        // Spezziamo l'array su più righe per rispettare il limite dei 100 caratteri
+        // Array spezzato su più righe per il limite dei 100 caratteri di Checkstyle
         String[][] asciiLetters = {
                 { 
                     " _____ ", "|_   _|", "  | |  ", 
