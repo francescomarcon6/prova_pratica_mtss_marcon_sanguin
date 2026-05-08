@@ -13,14 +13,17 @@ public class IntegerToRomanTest {
 
     @ParameterizedTest
     @CsvSource({
-            "1, I" // TODO: Aggiungere gli altri casi di test qui
+            "1, I",
+            "2, II",
+            "3, III"
     })
     public void convert_ValidInteger_ReturnsRomanString(int input, String expectedOutput) {
-        // TODO: Arrange
-        
-        // TODO: Act
-        
-        // TODO: Assert
-        
+        // Arrange (I dati sono preparati dal @CsvSource)
+
+        // Act
+        String actualOutput = IntegerToRoman.convert(input);
+
+        // Assert
+        assertEquals(expectedOutput, actualOutput);
     }
 }

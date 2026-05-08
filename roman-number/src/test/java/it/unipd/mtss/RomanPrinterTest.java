@@ -13,14 +13,17 @@ public class RomanPrinterTest {
 
     @ParameterizedTest
     @CsvSource({
-            "1, 'dummy_ascii_art'" // TODO: Sostituire con l'ASCII art reale e aggiungere casi
+            "1, ' _____ \n|_   _|\n  | |  \n  | |  \n _| |_ \n|_____|'",
+            "2, ' _____  _____ \n|_   _||_   _|\n  | |    | |  \n  | |    | |  \n _| |_  _| |_ \n|_____||_____|'",
+            "3, ' _____  _____  _____ \n|_   _||_   _||_   _|\n  | |    | |    | |  \n  | |    | |    | |  \n _| |_  _| |_  _| |_ \n|_____||_____||_____|'"
     })
     public void print_ValidInteger_ReturnsAsciiArt(int input, String expectedOutput) {
-        // TODO: Arrange
-        
-        // TODO: Act
-        
-        // TODO: Assert
-        
+        // Arrange (I dati sono preparati dal @CsvSource)
+
+        // Act
+        String actualOutput = RomanPrinter.print(input);
+
+        // Assert
+        assertEquals(expectedOutput, actualOutput);
     }
 }
