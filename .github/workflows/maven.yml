@@ -1,0 +1,63 @@
+name: Java Build Lifecycle
+
+# Trigger della pipeline: la pipeline si attiva ad ogni push e Pull Request
+# sui branch principali e sui branch di sviluppo (feature, release, hotfix)
+on:
+  push:
+    branches:
+      - develop
+      - main
+      - 'feature/*'
+      - 'release/*'
+      - 'hotfix/*'
+  pull_request:
+    branches:
+      - develop
+      - main
+
+jobs:
+  build:
+    name: Build, Test and Static Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout del codice sorgente dal repository
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 2. Configurazione dell'ambiente Java (JDK 17)
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    # 3. FASE DI COMPILAZIONE
+    - name: Compilation
+      working-directory: ./roman-number
+      run: mvn -B clean compile
+
+    # 4. ESECUZIONE TEST DI UNITÀ
+    - name: Unit Tests
+      working-directory: ./roman-number
+      run: mvn -B test
+
+    # 5. ANALISI STATICA (Checkstyle)
+    - name: Static Analysis (Checkstyle)
+      working-directory: ./roman-number
+      run: mvn -B checkstyle:check
+
+    # 6. GENERAZIONE REPORT JACOCO
+    - name: Generate JaCoCo Report
+      working-directory: ./roman-number
+      run: mvn -B jacoco:report
+
+    # 7. CARICAMENTO COPERTURA SU COVERALLS
+    # Requisito: attivare il calcolo del code coverage tramite Coveralls
+    - name: Upload Coverage to Coveralls
+      if: success()
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./roman-number/target/site/jacoco/jacoco.xml
