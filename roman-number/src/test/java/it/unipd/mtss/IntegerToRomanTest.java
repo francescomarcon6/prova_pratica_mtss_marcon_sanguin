@@ -25,7 +25,9 @@ public class IntegerToRomanTest {
             "15, XV",
             "19, XIX",
             "20, XX",
-            "30, XXX"
+            "30, XXX",
+            "40, XL",
+            "50, L"
     })
     public void convert_ValidInteger_ReturnsRomanString(int input, String expectedOutput) {
         // Arrange (I dati sono preparati dal @CsvSource)
