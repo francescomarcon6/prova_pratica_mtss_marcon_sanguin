@@ -53,8 +53,13 @@ jobs:
       working-directory: ./roman-number
       run: mvn -B jacoco:report
 
-    # 7. CARICAMENTO COPERTURA SU COVERALLS
-    # Requisito: attivare il calcolo del code coverage tramite Coveralls
+    # 7. CONTROLLO COPERTURA MINIMA (85%)
+    # Forza la verifica delle regole impostate nel pom.xml
+    - name: Check Code Coverage Threshold
+      working-directory: ./roman-number
+      run: mvn -B jacoco:check
+
+    # 8. CARICAMENTO COPERTURA SU COVERALLS
     - name: Upload Coverage to Coveralls
       if: success()
       uses: coverallsapp/github-action@v2
