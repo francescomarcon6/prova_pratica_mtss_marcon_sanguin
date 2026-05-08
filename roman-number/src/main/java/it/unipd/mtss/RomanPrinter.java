@@ -27,10 +27,14 @@ public class RomanPrinter {
                 { 
                     "__   __", "\\ \\ / /", " \\ V / ", 
                     "  > <  ", " / . \\ ", "/_/ \\_\\" 
+                },
+                { 
+                    " _      ", "| |     ", "| |     ", 
+                    "| |     ", "| |____ ", "|______|" 
                 }
         };
         
-        String letters = "IVX";
+        String letters = "IVXL";
         
         for (int row = 0; row < 6; row++) {
             for (char c : romanNumber.toCharArray()) {
