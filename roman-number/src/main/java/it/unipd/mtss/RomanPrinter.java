@@ -13,7 +13,6 @@ public class RomanPrinter {
     
     private static String printAsciiArt(String romanNumber) {
         StringBuilder asciiArt = new StringBuilder();
-        
         // Array spezzato su più righe per il limite dei 100 caratteri di Checkstyle
         String[][] asciiLetters = {
                 { 
@@ -31,11 +30,13 @@ public class RomanPrinter {
                 { 
                     " _      ", "| |     ", "| |     ", 
                     "| |     ", "| |____ ", "|______|" 
+                },
+                { 
+                    "  _____ ", " / ____|", "| |     ", 
+                    "| |     ", "| |____ ", " \\_____|" 
                 }
         };
-        
-        String letters = "IVXL";
-        
+        String letters = "IVXLC";
         for (int row = 0; row < 6; row++) {
             for (char c : romanNumber.toCharArray()) {
                 int index = letters.indexOf(c);
