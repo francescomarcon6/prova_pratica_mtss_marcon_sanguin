@@ -15,7 +15,8 @@ public class RomanPrinter {
         StringBuilder asciiArt = new StringBuilder();
         String[][] asciiLetters = {
                 { " _____ ", "|_   _|", "  | |  ", "  | |  ", " _| |_ ", "|_____|" },
-                { "__      __", "\\ \\    / /", " \\ \\  / / ", "  \\ \\/ /  ", "   \\  /   ", "    \\/    " },
+                { "__      __", "\\ \\    / /", " \\ \\  / / ", "  \\ \\/ /  ", "   \\  /   ", "  
+                  \\/    " },
         };
         String letters = "IV";
         
